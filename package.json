@@ -1,0 +1,26 @@
+{
+  "name": "parcial-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelBaGo/Parcial-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AngelBaGo/Parcial-2/issues"
+  },
+  "homepage": "https://github.com/AngelBaGo/Parcial-2#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mssql": "^12.5.2"
+  }
+}
