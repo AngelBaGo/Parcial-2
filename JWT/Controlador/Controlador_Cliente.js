@@ -1,17 +1,16 @@
 const db = require('../Config/MYSQL')
 
 const{
-    LoginClientes,
-    selectclientes,
-    selectcliente,
-    updatecliente,
-    insertcliente,
-    deletecliente
+    selectclientes2,
+    selectcliente2,
+    updatecliente2,
+    insertcliente2,
+    deletecliente2
 } = require('../DAL/mysql_llamadas'); 
 
 exports.getclientes = async (req,res) => {
 try {
-    const clientes = await selectclientes(); 
+    const clientes = await selectclientes2(); 
     
     if (clientes.length === 0) {
   return res.status(404).json({ mensaje: 'No hay clientes registrados' });
@@ -23,3 +22,4 @@ try {
     res.status(500).json({mensaje:"Ocurrio un error al obtener los clientes"  });
   }
 }
+

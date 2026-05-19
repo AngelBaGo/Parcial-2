@@ -8,8 +8,6 @@ app.use('/api/clientes',VentasCliente);
 
 
 
-
-
 connectDB().then(() => {
   app.listen(3000, () => console.log('Servidor en puerto 3000'));
 });

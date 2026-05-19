@@ -1,4 +1,5 @@
 const { getPool } = require('../Config/MYSQL');
+const jwt = require('jsonwebtoken');
 
 exports.selectclientes = async () => {
      const pool = getPool();
