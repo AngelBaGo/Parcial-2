@@ -24,4 +24,9 @@ router.get('/clientes', verificarToken, getclientes);
 router.get('/',getclientes);
 
 
+router.post('/agregarCliente',createcliente);
+
+router.delete('/eliminarCliente/:id',deletecliente);
+
+
 module.exports = router;
