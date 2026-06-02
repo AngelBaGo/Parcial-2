@@ -94,3 +94,41 @@ exports.loginUsuario = async (usuario) => {
 
     return result.recordset[0];
 };
+
+exports.updatecliente2 = async (
+    ID_CLIENTE,
+    nombre,
+    apellido,
+    sexo,
+    direccion,
+    telefono,
+    fnacimiento,
+    idUbicacion
+) => {
+
+    const pool = getPool();
+
+    const result = await pool.request()
+        .input('ID_CLIENTE', ID_CLIENTE)
+        .input('nombre', nombre)
+        .input('apellido', apellido)
+        .input('sexo', sexo)
+        .input('direccion', direccion)
+        .input('telefono', telefono)
+        .input('fnacimiento', fnacimiento)
+        .input('idUbicacion', idUbicacion)
+        .query(`
+            UPDATE cliente
+            SET
+                NOMBRE = @nombre,
+                APELLIDO = @apellido,
+                SEXO = @sexo,
+                DIRECCION = @direccion,
+                TELEFONO = @telefono,
+                FNACIMIENTO = @fnacimiento,
+                IDUBICACION = @idUbicacion
+            WHERE ID_CLIENTE = @ID_CLIENTE
+        `);
+
+    return result.rowsAffected[0];
+};

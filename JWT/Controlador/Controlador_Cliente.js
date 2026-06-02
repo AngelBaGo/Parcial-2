@@ -88,3 +88,49 @@ exports.deletecliente = async (req, res) => {
 
     }
 };
+
+exports.editcliente = async (req, res) => {
+
+    try {
+
+        const { id } = req.params;
+
+        const {
+            nombre,
+            apellido,
+            sexo,
+            direccion,
+            telefono,
+            fnacimiento,
+            idUbicacion
+        } = req.body;
+
+        const filas = await updatecliente2(
+            id,
+            nombre,
+            apellido,
+            sexo,
+            direccion,
+            telefono,
+            fnacimiento,
+            idUbicacion
+        );
+
+        if (filas === 0) {
+            return res.status(404).json({
+                mensaje: 'Cliente no encontrado'
+            });
+        }
+
+        res.status(200).json({
+            mensaje: 'Cliente actualizado correctamente'
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            error: error.message
+        });
+
+    }
+};
